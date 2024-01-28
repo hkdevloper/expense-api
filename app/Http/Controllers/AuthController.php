@@ -27,7 +27,7 @@ class AuthController extends Controller
 
             $user = User::where('email', $request->email)->firstOrFail();
             $token = JWTAuth::fromUser($user);
-            
+
             return $this->createNewToken($token);
         } catch (\Exception $e) {
             return response()->json([
