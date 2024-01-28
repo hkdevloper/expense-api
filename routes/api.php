@@ -10,6 +10,7 @@ use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\registerController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\UserController;
+use App\Models\TransactionCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,8 +30,58 @@ Route::get('/', function (Request $request) {
 });
 
 Route::get('/test', function (Request $request) {
-    \App\Models\User::truncate();
-    return \App\Models\User::all();
+    $additionalSources = ['Investment Dividends', 'Side Job', 'Refund', 'Savings Withdrawal'];
+    $additionalSpentOn = ['Electronics', 'Home Decor', 'Vacation', 'Education', 'Fitness'];
+    $additionalRemarks = [
+        'Purchase of a new laptop',
+        'Home furniture upgrade',
+        'Weekend getaway expenses',
+        'Tuition fees for a course',
+        'Gym membership renewal',
+        'Dividends from stock investments',
+        'Income from a part-time job',
+        'Refund from a canceled subscription',
+        'Withdrawal from savings account',
+        'Shopping for electronic gadgets',
+        'Expenses during a family vacation',
+    ];
+
+    $sources = array_merge(['Bank', 'Cash', 'Credit Card', 'Online Payment'], $additionalSources);
+    $spentOn = array_merge(['Online Shopping', 'Dining Out', 'Medical Bills', 'Rent', 'Transportation'], $additionalSpentOn);
+    $remarks = array_merge([
+        'Monthly grocery shopping',
+        'Dinner with friends',
+        'Doctor visit for regular checkup',
+        'Payment for internet services',
+        'Fuel for the car',
+        'Movies and entertainment',
+        'Salary deposit',
+        'Freelance project payment',
+        'Returns from investments',
+        'Received a gift',
+        'Other miscellaneous income',
+    ], $additionalRemarks);
+    $transactionsPerDay = rand(1, 10);
+    for ($i = 0; $i < 2 * 365; $i++) {
+        $transactionDate = date('Y-m-d H:i:s', strtotime('-' . $i . ' days'));
+        for ($j = 0; $j < $transactionsPerDay; $j++) {
+            DB::table('income_expenses')->insert([
+                'category_id' => TransactionCategory::pluck('id')->random(),
+                'currency_id' => 67,
+                'source' => $sources[array_rand($sources)],
+                'spent_on' => $spentOn[array_rand($spentOn)],
+                'remarks' => $remarks[array_rand($remarks)],
+                'amount' => rand(1, 1000),
+                'transaction_date' => $transactionDate,
+                'transaction_type' => ($j % 2 == 0) ? 'Income' : 'Expense',
+                'created_by' => 1,
+                'updated_by' => 1,
+                'created_at' => $transactionDate,
+                'updated_at' => $transactionDate,
+            ]);
+        }
+    }
+
 });
 
 Route::group(['prefix' => 'v1'], function () {

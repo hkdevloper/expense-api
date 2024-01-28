@@ -40,7 +40,7 @@ class CreateCurrenciesTable extends Migration
      *
      * @param $table
      */
-    public function initializeTable($table)
+    public function initializeTable($table): void
     {
         DB::table($table)->truncate();
         DB::table($table)->insert([

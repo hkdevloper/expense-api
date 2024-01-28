@@ -100,15 +100,14 @@ class ReportController extends Controller
             ->where('income_expenses.created_by', Auth::id())
             ->select(
                 'income_expenses.transaction_type',
-                'income_expenses.transaction_date',
+                DB::raw('MAX(income_expenses.transaction_date) as transaction_date'),
                 'currencies.currency_code',
                 'currencies.currency_name',
                 DB::raw('SUM(income_expenses.amount) AS total'),
-                DB::raw('DATE_FORMAT(income_expenses.transaction_date, "%Y-%m-%d") AS formatted_date')
+                DB::raw('MAX(DATE_FORMAT(income_expenses.transaction_date, "%Y-%m-%d")) AS formatted_date')
             )
-            ->groupBy('currency_id', 'transaction_type', 'formatted_date')
+            ->groupBy('currency_id', 'transaction_type')
             ->get();
-
         return response()->json(['transactions' => $userIncomeExpenses]);
 
     }

@@ -27,6 +27,8 @@ class CreateIncomeExpensesTable extends Migration
             $table->integer('updated_by')->nullable();
             $table->timestamps();
         });
+
+
     }
 
     /**

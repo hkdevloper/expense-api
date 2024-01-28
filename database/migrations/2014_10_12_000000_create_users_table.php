@@ -16,11 +16,20 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('currency_id')->default('18');
+            $table->integer('currency_id')->default('67');
             $table->boolean('is_admin')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
+
+        /// Create One user
+        DB::table('users')->insert(
+            array(
+                'name' => 'Hardik Kanjariya',
+                'email' => 'hardik@mail.com',
+                'password' => bcrypt('hardik'),
+                'is_admin' => true,
+            ));
     }
 
     /**

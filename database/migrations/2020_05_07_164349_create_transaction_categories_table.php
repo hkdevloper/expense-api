@@ -24,7 +24,20 @@ class CreateTransactionCategoriesTable extends Migration
             $table->timestamps();
         });
 
-        $this->initializeTable('transaction_categories');
+        /// Create Default Categories
+        DB::table('transaction_categories')->insert([
+            ['category_name' => 'Utilities', 'category_type' => 'Expense', 'created_by' => 1, 'updated_by' => 1],
+            ['category_name' => 'Groceries', 'category_type' => 'Expense', 'created_by' => 1, 'updated_by' => 1],
+            ['category_name' => 'Entertainment', 'category_type' => 'Expense', 'created_by' => 1, 'updated_by' => 1],
+            ['category_name' => 'Healthcare', 'category_type' => 'Expense', 'created_by' => 1, 'updated_by' => 1],
+            ['category_name' => 'Transportation', 'category_type' => 'Expense', 'created_by' => 1, 'updated_by' => 1],
+            ['category_name' => 'Other Expenses', 'category_type' => 'Expense', 'created_by' => 1, 'updated_by' => 1],
+            ['category_name' => 'Salary', 'category_type' => 'Income', 'created_by' => 1, 'updated_by' => 1],
+            ['category_name' => 'Freelance Income', 'category_type' => 'Income', 'created_by' => 1, 'updated_by' => 1],
+            ['category_name' => 'Investment Returns', 'category_type' => 'Income', 'created_by' => 1, 'updated_by' => 1],
+            ['category_name' => 'Gifts Received', 'category_type' => 'Income', 'created_by' => 1, 'updated_by' => 1],
+            ['category_name' => 'Other Income', 'category_type' => 'Income', 'created_by' => 1, 'updated_by' => 1],
+        ]);
     }
 
     /**
@@ -35,20 +48,5 @@ class CreateTransactionCategoriesTable extends Migration
     public function down(): void
     {
         Schema::dropIfExists('transaction_categories');
-    }
-
-    /**
-     * Initialize table with some data
-     *
-     * @param $table
-     */
-    public function initializeTable($table): void
-    {
-        DB::table($table)->truncate();
-        DB::table($table)->insert(
-            collect(TransactionCategory::$DEFAULT_CATEGORIES)->map(function ($item) {
-                return array_merge($item, ['created_by' => 1]);
-            })->toArray()
-        );
     }
 }
