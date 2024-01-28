@@ -90,7 +90,14 @@ class IncomeController extends Controller
         ]);
 
         $income = new IncomeExpense();
-        $this->getIncomeExpense($request, $income);
+        $income->category_id = $request->category_id;
+        $income->source = $request->source;
+        $income->remarks = $request->notes;
+        $income->amount = $request->amount;
+        $income->spent_on = $request->income_date;
+        $income->transaction_date = $request->income_date;
+        $income->transaction_type = 'Income';
+        $income->currency_id = $request->currency_id;
         $income->created_by = Auth::id();
         $income->save();
 
@@ -136,7 +143,13 @@ class IncomeController extends Controller
         ]);
 
         $incomeById = IncomeExpense::find($id);
-        $this->getIncomeExpense($request, $incomeById);
+        $incomeById->category_id = $request->category_id;
+        $incomeById->source = $request->source;
+        $incomeById->remarks = $request->notes;
+        $incomeById->amount = $request->amount;
+        $incomeById->transaction_date = $request->income_date;
+        $incomeById->transaction_type = 'Income';
+        $incomeById->currency_id = $request->currency_id;
         $incomeById->updated_by = Auth::id();
         $incomeById->save();
 
@@ -148,10 +161,10 @@ class IncomeController extends Controller
      *
      * @urlParam id required Income id to delete Example: 1
      *
-     * @param  int $id
+     * @param int $id
      * @return JsonResponse
      */
-    public function destroy($id)
+    public function destroy(int $id)
     {
         if (IncomeExpense::where('id', $id)->where('created_by', Auth::id())->delete()){
             return response()->json(['data' => 'income_deleted'], 200);
@@ -183,21 +196,5 @@ class IncomeController extends Controller
             'income_month' => $incomeThisMonth,
             'income_today' => $incomeToday
         ]], 200);
-    }
-
-    /**
-     * @param Request $request
-     * @param $incomeById
-     * @return void
-     */
-    private function getIncomeExpense(Request $request, $incomeById): void
-    {
-        $incomeById->category_id = $request->category_id;
-        $incomeById->source = $request->source;
-        $incomeById->remarks = $request->notes;
-        $incomeById->amount = $request->amount;
-        $incomeById->transaction_date = $request->income_date;
-        $incomeById->transaction_type = 'Income';
-        $incomeById->currency_id = $request->currency_id;
     }
 }

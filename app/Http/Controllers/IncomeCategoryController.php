@@ -32,10 +32,9 @@ class IncomeCategoryController extends Controller
         ]);
 
         $query = TransactionCategory::where('created_by', Auth::id())
-            ->where('category_type', 'Income');
+            ->where('category_type', 'Income')->paginate($request->per_page);
 
-        $result = $query->apify();
-
+        $result = $query->toArray();
         return response()->json($result);
     }
 
