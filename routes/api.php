@@ -135,5 +135,4 @@ Route::group(['prefix' => 'v1', 'middleware' => ['auth:api']], function () {
     Route::get('/chart/income-expense/category', [ChartController::class, 'incomeExpenseCategories']);
     Route::get('/chart/income-expense/month-wise', [ChartController::class, 'incomeExpenseDataMonthWise']);
     Route::get('/chart/income-expense/category-wise', [ChartController::class, 'incomeExpenseDataMonthAndCategoryWise']);
-
 });
