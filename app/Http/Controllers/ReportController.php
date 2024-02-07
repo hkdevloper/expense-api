@@ -96,7 +96,7 @@ class ReportController extends Controller
     public function transaction()
     {
        $userIncomeExpenses = IncomeExpense::join('currencies', 'currencies.id', 'income_expenses.currency_id')
-        ->where('income_expenses.created_by', 1)
+        ->where('income_expenses.created_by', Auth::id())
         ->select(
             'income_expenses.transaction_type',
             DB::raw('DATE(income_expenses.transaction_date) as transaction_date'),
