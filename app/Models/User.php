@@ -3,16 +3,21 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable implements JWTSubject
+class User extends Authenticatable implements JWTSubject,FilamentUser
 {
     use HasApiTokens, HasFactory, Notifiable, Authorizable;
 
+  	public function canAccessPanel(Panel $panel): bool
+    {
+        return true;
+    }
     /**
      * The attributes that are mass assignable.
      *
