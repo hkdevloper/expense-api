@@ -26,11 +26,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function (Request $request) {
-    return 'Server is running! 🙂';
+  
+    //return 'Server is running! 🙂';
+  return App\Models\User::all();
 });
 
 Route::get('/test', function (Request $request) {
-    $additionalSources = ['Investment Dividends', 'Side Job', 'Refund', 'Savings Withdrawal'];
+    /*$additionalSources = ['Investment Dividends', 'Side Job', 'Refund', 'Savings Withdrawal'];
     $additionalSpentOn = ['Electronics', 'Home Decor', 'Vacation', 'Education', 'Fitness'];
     $additionalRemarks = [
         'Purchase of a new laptop',
@@ -80,7 +82,8 @@ Route::get('/test', function (Request $request) {
                 'updated_at' => $transactionDate,
             ]);
         }
-    }
+    }*/
+  
 
 });
 
