@@ -34,9 +34,9 @@ class UserResource extends Resource
                     ->password()
                     ->required()
                     ->maxLength(191),
-                Forms\Components\TextInput::make('currency_id')
+                Forms\Components\Select::make('currency_id')
+                    ->relationship('currency', 'currency_code')
                     ->required()
-                    ->numeric()
                     ->default(67),
                 Forms\Components\Toggle::make('is_admin')
                     ->required(),
