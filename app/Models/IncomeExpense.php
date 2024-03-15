@@ -12,6 +12,19 @@ class IncomeExpense extends Model
         'Expense' => '#ffb102'
     ];
 
+    protected $fillable = [
+        'category_id',
+        'currency_id',
+        'source',
+        'spent_on',
+        'remarks',
+        'amount',
+        'transaction_date',
+        'transaction_type',
+        'created_by',
+        'updated_by'
+    ];
+
     public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(TransactionCategory::class,'category_id');

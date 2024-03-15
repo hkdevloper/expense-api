@@ -27,9 +27,12 @@ class TransactionCategoryResource extends Resource
                     ->required()
                     ->maxLength(100),
                 Forms\Components\TextInput::make('category_type'),
-                Forms\Components\TextInput::make('created_by')
-                    ->numeric(),
+                Forms\Components\Select::make('created_by')
+                    ->native(false)
+                    ->relationship('creator', 'name'),
                 Forms\Components\TextInput::make('updated_by')
+                    ->hidden()
+                    ->default(auth()->id())
                     ->numeric(),
             ]);
     }
@@ -41,11 +44,8 @@ class TransactionCategoryResource extends Resource
                 Tables\Columns\TextColumn::make('category_name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('category_type'),
-                Tables\Columns\TextColumn::make('created_by')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('updated_by')
-                    ->numeric()
+                Tables\Columns\TextColumn::make('creator.name')
+                    ->label('Created By')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

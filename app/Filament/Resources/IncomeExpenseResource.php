@@ -24,10 +24,14 @@ class IncomeExpenseResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Select::make('category_id')
-                    ->relationship('category', 'id')
+                    ->relationship('category', 'category_name')
+                    ->native(false)
+                    ->searchable()
                     ->required(),
                 Forms\Components\Select::make('currency_id')
-                    ->relationship('currency', 'id'),
+                    ->native(false)
+                    ->searchable()
+                    ->relationship('currency', 'currency_code'),
                 Forms\Components\TextInput::make('source')
                     ->required()
                     ->maxLength(100),
@@ -39,13 +43,24 @@ class IncomeExpenseResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('amount')
                     ->required()
+                    ->default(0)
                     ->numeric(),
-                Forms\Components\DateTimePicker::make('transaction_date')
+                Forms\Components\DatePicker::make('transaction_date')
+                    ->default(now())
                     ->required(),
-                Forms\Components\TextInput::make('transaction_type'),
-                Forms\Components\TextInput::make('created_by')
-                    ->numeric(),
+                Forms\Components\Select::make('transaction_type')
+                    ->native(false)
+                    ->options([
+                        'Income' => 'Income',
+                        'Expense' => 'Expense',
+                    ])
+                    ->required(),
+                Forms\Components\Select::make('created_by')
+                    ->native(false)
+                    ->relationship('creator', 'name'),
                 Forms\Components\TextInput::make('updated_by')
+                    ->hidden()
+                    ->default(auth()->id())
                     ->numeric(),
             ]);
     }
@@ -54,10 +69,10 @@ class IncomeExpenseResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('category.id')
+                Tables\Columns\TextColumn::make('category.category_name')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('currency.id')
+                Tables\Columns\TextColumn::make('currency.currency_code')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('source')
@@ -68,13 +83,11 @@ class IncomeExpenseResource extends Resource
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('transaction_date')
-                    ->dateTime()
+                    ->label('Date')
+                    ->date()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('transaction_type'),
-                Tables\Columns\TextColumn::make('created_by')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('updated_by')
+                Tables\Columns\TextColumn::make('transaction_type')->label('Type'),
+                Tables\Columns\TextColumn::make('creator.name')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
