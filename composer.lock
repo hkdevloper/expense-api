@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3df0d10980e5bbee006ddf4560b82020",
+    "content-hash": "7c9578ab603bacb0152a7d44c345e1ae",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
-            "version": "1.2.20",
+            "version": "1.2.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AnourValar/eloquent-serialize.git",
-                "reference": "f8408e92768ff295990e3a1edb7e47950e008c63"
+                "reference": "39766b21c8de0dbbff8a9368c2579502fd1d248e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AnourValar/eloquent-serialize/zipball/f8408e92768ff295990e3a1edb7e47950e008c63",
-                "reference": "f8408e92768ff295990e3a1edb7e47950e008c63",
+                "url": "https://api.github.com/repos/AnourValar/eloquent-serialize/zipball/39766b21c8de0dbbff8a9368c2579502fd1d248e",
+                "reference": "39766b21c8de0dbbff8a9368c2579502fd1d248e",
                 "shasum": ""
             },
             "require": {
@@ -68,9 +68,9 @@
             ],
             "support": {
                 "issues": "https://github.com/AnourValar/eloquent-serialize/issues",
-                "source": "https://github.com/AnourValar/eloquent-serialize/tree/1.2.20"
+                "source": "https://github.com/AnourValar/eloquent-serialize/tree/1.2.21"
             },
-            "time": "2024-03-08T14:48:54+00:00"
+            "time": "2024-03-15T14:33:22+00:00"
         },
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -2205,16 +2205,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.47.0",
+            "version": "v10.48.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "fce29b8de62733cdecbe12e3bae801f83fff2ea4"
+                "reference": "5791c052b41c6b593556adc687076bfbdd13c501"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/fce29b8de62733cdecbe12e3bae801f83fff2ea4",
-                "reference": "fce29b8de62733cdecbe12e3bae801f83fff2ea4",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/5791c052b41c6b593556adc687076bfbdd13c501",
+                "reference": "5791c052b41c6b593556adc687076bfbdd13c501",
                 "shasum": ""
             },
             "require": {
@@ -2262,6 +2262,7 @@
             "conflict": {
                 "carbonphp/carbon-doctrine-types": ">=3.0",
                 "doctrine/dbal": ">=4.0",
+                "mockery/mockery": "1.6.8",
                 "phpunit/phpunit": ">=11.0.0",
                 "tightenco/collect": "<5.5.33"
             },
@@ -2407,7 +2408,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-03-05T15:18:36+00:00"
+            "time": "2024-03-15T10:17:07+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -2660,34 +2661,34 @@
         },
         {
             "name": "lcobucci/clock",
-            "version": "3.2.0",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lcobucci/clock.git",
-                "reference": "6f28b826ea01306b07980cb8320ab30b966cd715"
+                "reference": "c7aadcd6fd97ed9e199114269c0be3f335e38876"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lcobucci/clock/zipball/6f28b826ea01306b07980cb8320ab30b966cd715",
-                "reference": "6f28b826ea01306b07980cb8320ab30b966cd715",
+                "url": "https://api.github.com/repos/lcobucci/clock/zipball/c7aadcd6fd97ed9e199114269c0be3f335e38876",
+                "reference": "c7aadcd6fd97ed9e199114269c0be3f335e38876",
                 "shasum": ""
             },
             "require": {
-                "php": "~8.2.0 || ~8.3.0",
-                "psr/clock": "^1.0"
+                "php": "~8.1.0 || ~8.2.0",
+                "stella-maris/clock": "^0.1.7"
             },
             "provide": {
                 "psr/clock-implementation": "1.0"
             },
             "require-dev": {
-                "infection/infection": "^0.27",
-                "lcobucci/coding-standard": "^11.0.0",
-                "phpstan/extension-installer": "^1.3.1",
-                "phpstan/phpstan": "^1.10.25",
-                "phpstan/phpstan-deprecation-rules": "^1.1.3",
-                "phpstan/phpstan-phpunit": "^1.3.13",
-                "phpstan/phpstan-strict-rules": "^1.5.1",
-                "phpunit/phpunit": "^10.2.3"
+                "infection/infection": "^0.26",
+                "lcobucci/coding-standard": "^9.0",
+                "phpstan/extension-installer": "^1.2",
+                "phpstan/phpstan": "^1.9.4",
+                "phpstan/phpstan-deprecation-rules": "^1.1.1",
+                "phpstan/phpstan-phpunit": "^1.3.2",
+                "phpstan/phpstan-strict-rules": "^1.4.4",
+                "phpunit/phpunit": "^9.5.27"
             },
             "type": "library",
             "autoload": {
@@ -2708,7 +2709,7 @@
             "description": "Yet another clock abstraction",
             "support": {
                 "issues": "https://github.com/lcobucci/clock/issues",
-                "source": "https://github.com/lcobucci/clock/tree/3.2.0"
+                "source": "https://github.com/lcobucci/clock/tree/2.3.0"
             },
             "funding": [
                 {
@@ -2720,45 +2721,47 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-11-17T17:00:27+00:00"
+            "time": "2022-12-19T14:38:11+00:00"
         },
         {
             "name": "lcobucci/jwt",
-            "version": "4.3.0",
+            "version": "4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lcobucci/jwt.git",
-                "reference": "4d7de2fe0d51a96418c0d04004986e410e87f6b4"
+                "reference": "55564265fddf810504110bd68ca311932324b0e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/4d7de2fe0d51a96418c0d04004986e410e87f6b4",
-                "reference": "4d7de2fe0d51a96418c0d04004986e410e87f6b4",
+                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/55564265fddf810504110bd68ca311932324b0e9",
+                "reference": "55564265fddf810504110bd68ca311932324b0e9",
                 "shasum": ""
             },
             "require": {
-                "ext-hash": "*",
-                "ext-json": "*",
                 "ext-mbstring": "*",
                 "ext-openssl": "*",
-                "ext-sodium": "*",
-                "lcobucci/clock": "^2.0 || ^3.0",
+                "lcobucci/clock": "^2.0",
                 "php": "^7.4 || ^8.0"
             },
             "require-dev": {
-                "infection/infection": "^0.21",
+                "infection/infection": "^0.20",
                 "lcobucci/coding-standard": "^6.0",
-                "mikey179/vfsstream": "^1.6.7",
-                "phpbench/phpbench": "^1.2",
+                "mikey179/vfsstream": "^1.6",
+                "phpbench/phpbench": "^0.17",
                 "phpstan/extension-installer": "^1.0",
-                "phpstan/phpstan": "^1.4",
-                "phpstan/phpstan-deprecation-rules": "^1.0",
-                "phpstan/phpstan-phpunit": "^1.0",
-                "phpstan/phpstan-strict-rules": "^1.0",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-deprecation-rules": "^0.12",
+                "phpstan/phpstan-phpunit": "^0.12",
+                "phpstan/phpstan-strict-rules": "^0.12",
                 "phpunit/php-invoker": "^3.1",
-                "phpunit/phpunit": "^9.5"
+                "phpunit/phpunit": "^9.4"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Lcobucci\\JWT\\": "src"
@@ -2782,7 +2785,7 @@
             ],
             "support": {
                 "issues": "https://github.com/lcobucci/jwt/issues",
-                "source": "https://github.com/lcobucci/jwt/tree/4.3.0"
+                "source": "https://github.com/lcobucci/jwt/tree/4.0.4"
             },
             "funding": [
                 {
@@ -2794,7 +2797,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-01-02T13:28:00+00:00"
+            "time": "2021-09-28T19:18:28+00:00"
         },
         {
             "name": "league/commonmark",
@@ -3455,16 +3458,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v3.4.8",
+            "version": "v3.4.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "0335b8f022ac535fc3cf29fd8a8fcb275353a470"
+                "reference": "c65b3f0798ab2c9338213ede3588c3cdf4e6fcc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/0335b8f022ac535fc3cf29fd8a8fcb275353a470",
-                "reference": "0335b8f022ac535fc3cf29fd8a8fcb275353a470",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/c65b3f0798ab2c9338213ede3588c3cdf4e6fcc0",
+                "reference": "c65b3f0798ab2c9338213ede3588c3cdf4e6fcc0",
                 "shasum": ""
             },
             "require": {
@@ -3518,7 +3521,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v3.4.8"
+                "source": "https://github.com/livewire/livewire/tree/v3.4.9"
             },
             "funding": [
                 {
@@ -3526,7 +3529,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-03-08T13:01:50+00:00"
+            "time": "2024-03-14T14:03:32+00:00"
         },
         {
             "name": "masterminds/html5",
@@ -4726,16 +4729,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.12.0",
+            "version": "v0.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "750bf031a48fd07c673dbe3f11f72362ea306d0d"
+                "reference": "39621c73e0754328252f032c6997b983afc50431"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/750bf031a48fd07c673dbe3f11f72362ea306d0d",
-                "reference": "750bf031a48fd07c673dbe3f11f72362ea306d0d",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/39621c73e0754328252f032c6997b983afc50431",
+                "reference": "39621c73e0754328252f032c6997b983afc50431",
                 "shasum": ""
             },
             "require": {
@@ -4799,9 +4802,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.12.0"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.12.1"
             },
-            "time": "2023-12-20T15:28:09+00:00"
+            "time": "2024-03-15T03:22:57+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -5283,6 +5286,53 @@
                 }
             ],
             "time": "2024-03-07T07:35:57+00:00"
+        },
+        {
+            "name": "stella-maris/clock",
+            "version": "0.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stella-maris-solutions/clock.git",
+                "reference": "fa23ce16019289a18bb3446fdecd45befcdd94f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stella-maris-solutions/clock/zipball/fa23ce16019289a18bb3446fdecd45befcdd94f8",
+                "reference": "fa23ce16019289a18bb3446fdecd45befcdd94f8",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0|^8.0",
+                "psr/clock": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "StellaMaris\\Clock\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andreas Heigl",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A pre-release of the proposed PSR-20 Clock-Interface",
+            "homepage": "https://gitlab.com/stella-maris/clock",
+            "keywords": [
+                "clock",
+                "datetime",
+                "point in time",
+                "psr20"
+            ],
+            "support": {
+                "source": "https://github.com/stella-maris-solutions/clock/tree/0.1.7"
+            },
+            "time": "2022-11-25T16:15:06+00:00"
         },
         {
             "name": "symfony/console",
@@ -7638,16 +7688,16 @@
         },
         {
             "name": "tymon/jwt-auth",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tymondesigns/jwt-auth.git",
-                "reference": "9c82452d93986a877ea606153125304e1104c7f7"
+                "reference": "51620ebd5b68bb3ce9e66ba86bda303ae5f10f7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tymondesigns/jwt-auth/zipball/9c82452d93986a877ea606153125304e1104c7f7",
-                "reference": "9c82452d93986a877ea606153125304e1104c7f7",
+                "url": "https://api.github.com/repos/tymondesigns/jwt-auth/zipball/51620ebd5b68bb3ce9e66ba86bda303ae5f10f7f",
+                "reference": "51620ebd5b68bb3ce9e66ba86bda303ae5f10f7f",
                 "shasum": ""
             },
             "require": {
@@ -7656,7 +7706,7 @@
                 "illuminate/http": "^9.0|^10.0|^11.0",
                 "illuminate/support": "^9.0|^10.0|^11.0",
                 "lcobucci/jwt": "^4.0",
-                "nesbot/carbon": "^2.0",
+                "nesbot/carbon": "^2.0|^3.0",
                 "php": "^8.0"
             },
             "require-dev": {
@@ -7718,7 +7768,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2024-03-02T14:26:05+00:00"
+            "time": "2024-03-14T19:29:49+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -8191,16 +8241,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.28.2",
+            "version": "v1.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "057777403b8ab79222dcc04983beaab10b6de6a0"
+                "reference": "e40cc7ffb5186c45698dbd47e9477e0e429396d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/057777403b8ab79222dcc04983beaab10b6de6a0",
-                "reference": "057777403b8ab79222dcc04983beaab10b6de6a0",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/e40cc7ffb5186c45698dbd47e9477e0e429396d0",
+                "reference": "e40cc7ffb5186c45698dbd47e9477e0e429396d0",
                 "shasum": ""
             },
             "require": {
@@ -8249,11 +8299,11 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2024-03-04T14:58:29+00:00"
+            "time": "2024-03-08T16:32:33+00:00"
         },
         {
             "name": "mockery/mockery",
-            "version": "1.6.7",
+            "version": "1.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mockery/mockery.git",
@@ -8609,16 +8659,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "10.1.13",
+            "version": "10.1.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "d51c3aec14896d5e80b354fad58e998d1980f8f8"
+                "reference": "e3f51450ebffe8e0efdf7346ae966a656f7d5e5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/d51c3aec14896d5e80b354fad58e998d1980f8f8",
-                "reference": "d51c3aec14896d5e80b354fad58e998d1980f8f8",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/e3f51450ebffe8e0efdf7346ae966a656f7d5e5b",
+                "reference": "e3f51450ebffe8e0efdf7346ae966a656f7d5e5b",
                 "shasum": ""
             },
             "require": {
@@ -8675,7 +8725,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
                 "security": "https://github.com/sebastianbergmann/php-code-coverage/security/policy",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/10.1.13"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/10.1.14"
             },
             "funding": [
                 {
@@ -8683,7 +8733,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-03-09T16:54:15+00:00"
+            "time": "2024-03-12T15:33:41+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -8930,16 +8980,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.5.12",
+            "version": "10.5.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "41a9886b85ac7bf3929853baf96b95361cd69d2b"
+                "reference": "20a63fc1c6db29b15da3bd02d4b6cf59900088a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/41a9886b85ac7bf3929853baf96b95361cd69d2b",
-                "reference": "41a9886b85ac7bf3929853baf96b95361cd69d2b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/20a63fc1c6db29b15da3bd02d4b6cf59900088a7",
+                "reference": "20a63fc1c6db29b15da3bd02d4b6cf59900088a7",
                 "shasum": ""
             },
             "require": {
@@ -9011,7 +9061,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.12"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.13"
             },
             "funding": [
                 {
@@ -9027,7 +9077,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-03-09T12:04:07+00:00"
+            "time": "2024-03-12T15:37:41+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -10382,5 +10432,5 @@
         "php": "^8.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
