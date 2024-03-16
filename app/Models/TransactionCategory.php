@@ -18,6 +18,13 @@ class TransactionCategory extends Model
         ['category_name' => 'Lent Return', 'category_type' => 'Income']
     ];
 
+    protected $fillable = [
+        'category_name',
+        'category_type',
+        'created_by',
+        'updated_by'
+    ];
+
     public function scopeDeletable($query)
     {
         return $query->doesntHave('income')->doesntHave('expense')->whereNotIn('category_name', collect(self::$DEFAULT_CATEGORIES)->pluck('category_name')->toArray());

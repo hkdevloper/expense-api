@@ -29,6 +29,7 @@ class User extends Authenticatable implements JWTSubject,FilamentUser
         'name',
         'email',
         'password',
+        'currency_id'
     ];
 
     /**

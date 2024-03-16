@@ -8,6 +8,14 @@ class Currency extends Model
 {
     protected $hidden = ['created_at', 'updated_at'];
 
+    protected $fillable = [
+        'name',
+        'code',
+        'symbol',
+        'exchange_rate',
+        'status',
+    ];
+
     public function user(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(User::class, 'currency_id');
